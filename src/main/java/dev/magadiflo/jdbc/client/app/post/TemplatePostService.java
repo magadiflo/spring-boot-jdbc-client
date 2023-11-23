@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service("jdbcTemplateService")
 public class TemplatePostService implements IPostService {
     private static final Logger LOG = LoggerFactory.getLogger(TemplatePostService.class);
     private final JdbcTemplate jdbcTemplate;

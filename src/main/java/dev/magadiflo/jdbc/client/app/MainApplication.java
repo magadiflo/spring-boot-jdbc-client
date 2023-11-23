@@ -2,6 +2,7 @@ package dev.magadiflo.jdbc.client.app;
 
 import dev.magadiflo.jdbc.client.app.post.IPostService;
 import dev.magadiflo.jdbc.client.app.post.Post;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +18,7 @@ public class MainApplication {
     }
 
     @Bean
-    public CommandLineRunner runner(IPostService postService) {
+    public CommandLineRunner runner(@Qualifier("jdbcClientService") IPostService postService) {
         return args -> {
             postService.create(new Post("1234", "Hello World", "hello-world", LocalDate.now(), 1, "java, spring boot"));
         };

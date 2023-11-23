@@ -1,5 +1,6 @@
 package dev.magadiflo.jdbc.client.app.post;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import java.util.List;
 public class PostController {
     private final IPostService postService;
 
-    public PostController(IPostService postService) {
+    public PostController(@Qualifier("jdbcClientService") IPostService postService) {
         this.postService = postService;
     }
 
