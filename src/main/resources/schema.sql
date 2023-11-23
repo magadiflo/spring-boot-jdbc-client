@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE posts(
+    id VARCHAR(255) NOT NULL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    slug VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    time_to_read INT NOT NULL,
+    tags VARCHAR(255)
+);
